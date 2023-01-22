@@ -1,0 +1,181 @@
+%⠄⠄⠄⠄⠄⠄⣀⣀⣀⣤⣶⣿⣿⣶⣶⣶⣤⣄⣠⣴⣶⣿⣿⣿⣿⣶⣦⣄⠄⠄
+%⠄⠄⣠⣴⣾⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦
+%⢠⠾⣋⣭⣄⡀⠄⠄⠈⠙⠻⣿⣿⡿⠛⠋⠉⠉⠉⠙⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿
+%⡎⣾⡟⢻⣿⣷⠄⠄⠄⠄⠄⡼⣡⣾⣿⣿⣦⠄⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⣿⣿
+%⡇⢿⣷⣾⣿⠟⠄⠄⠄⠄⢰⠁⣿⣇⣸⣿⣿⠄⠄⠄⠄⠄⠄⠄⣠⣼⣿⣿⣿⣿
+%⢸⣦⣭⣭⣄⣤⣤⣤⣴⣶⣿⣧⡘⠻⠛⠛⠁⠄⠄⠄⠄⣀⣴⣿⣿⣿⣿⣿⣿⣿
+%⠄⢉⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⢰⡿⠛⠛⠛⠛⠻⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠸⡇⠄⠄⢀⣀⣀⠄⠄⠄⠄⠄⠉⠉⠛⠛⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠄⠈⣆⠄⠄⢿⣿⣿⣿⣷⣶⣶⣤⣤⣀⣀⡀⠄⠄⠉⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠄⠄⣿⡀⠄⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠂⠄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠄⠄⣿⡇⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠄⠄⣿⡇⠄⠠⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+%⠄⠄⣿⠁⠄⠐⠛⠛⠛⠛⠉⠉⠉⠉⠄⠄⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿
+%⠄⠄⠻⣦⣀⣀⣀⣀⣀⣀⣤⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠄
+
+\documentclass[12pt,hidelinks]{article}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[dvipsnames]{xcolor}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\ctikzset{bipoles/resistor/height=0.25}
+\ctikzset{bipoles/cuteinductor/height=0.25}
+
+\usetikzlibrary{calc}
+\usepackage{amsmath,bm}
+\usepackage{anyfontsize}
+\usepackage{sectsty}
+\usepackage{amssymb,pifont}
+\usepackage[a-2b]{pdfx}
+\usepackage{float}
+\usepackage[pdfa]{hyperref}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+% matlab %
+\usepackage[framed,numbered]{matlab-prettifier}
+\usepackage{inconsolata}
+\lstset{
+  basicstyle=\ttfamily,
+}
+\usepackage[export]{adjustbox}
+
+% appendix %
+\usepackage[titletoc,title]{appendix}
+\usepackage{etoolbox}
+\appto\appendix{\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}}
+% reinstate the correct level for list of tables and figures
+\appto\listoffigures{\addtocontents{lof}{\protect\setcounter{tocdepth}{1}}}
+\appto\listoftables{\addtocontents{lot}{\protect\setcounter{tocdepth}{1}}}
+%  %
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\crefname{table}{Tab.}{Tab.}
+\crefname{figure}{Fig.}{Fig.}
+\crefname{equation}{Eq.}{Eq.}
+%\usepackage{pgfplots}
+%\usepackage{circuitikz}
+\usepackage[binary-units]{siunitx}
+\sisetup{
+    detect-weight = true,
+    detect-inline-weight = math,
+    detect-display-math = true,
+}
+\setcounter{section}{-1}
+\DeclareSIUnit{\rpm}{rpm}
+% math macros%
+\include{extra/math_macros}
+
+% glossary %
+\usepackage[acronym,automake]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
+\newacronym{spm}{SPM}{Surface Permanent Magnet}
+\newacronym{pmsm}{PMSM}{Permanent Magnet Syncronous Motor}
+\newacronym{im}{IM}{Incuction Motor}
+\newacronym{fem}{FEM}{Finite Element Model}
+\newacronym{mtpa}{MTPA}{Maximum Torque Per Ampere}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{dw}{DW}{Distribuited Winding}
+\newacronym{fw}{FW}{Fractional Winding}
+\newacronym{ol}{OL}{Overload}
+\newacronym{dnn}{DNN}{Deep Neural Network}
+\newacronym{mse}{MSE}{Mean Square Error}
+
+\makeglossaries
+%%%%%%%%%%%%
+
+% header %
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\small{Machine Learning project}}
+\lhead{\rightmark}
+\rfoot{Page \thepage}
+\lfoot{\raisebox{-.45\height}[0pt][0pt]{\includegraphics[width=3cm]{extra/LogoMuner.png}}}
+
+%---- font ----%
+\allsectionsfont{\sffamily}
+%
+% \makeindex
+\begin{document}
+\clearpage
+\thispagestyle{empty}
+\include{extra/cover}
+\newpage
+
+\pagenumbering{arabic}
+
+\newgeometry{
+    total={150mm,210mm},headheight=14.5pt
+    %top=3cm,bottom=3cm,right=2cm,left=2.5cm,headheight=14pt
+    }  
+\tableofcontents
+
+\clearpage
+
+
+\newpage
+\section{Introduction}
+This report was made by Jacopo Ferretti for for the exam of \emph{Machine Learning}.
+
+I was asked to develop a project involving \gls{ml} with any topic i liked. I decided to mix my knowledge in electrical machine, and to apply it with this new topic.
+
+\textbf{In this project, a \gls{ml} is trained to predict how much overload current an electric motor is able to sustain before demagnetization.}
+
+\gls{ml} software and dataset are available on \href{http://www.overleaf.com}{Github}\cite{Github} and \href{http://www.overleaf.com}{Kaggle}\cite{Kaggle}
+
+\subsection{Used Software}
+\begin{itemize}
+  \item Matlab\cite{matlab}: a programming language well known in engineering due to its simplicity and completeness. It has been used as the environment to create a script for producing the final dataset.
+  \item FEMM\cite{femm}: an open source program that can simulate Electro-Mechanical behavior with \gls{fem} analysis. It has been used to simulate and create the dataset.
+  \item Google Colab\cite{colab}: ad hosted Jupyter notebook service. It has been used to create, train and evaluate the \gls{ml} model. The programming language used is Python\cite{python}, that is particularly suited for \gls{ml}.
+  \item TensorFlow\cite{tensorflow} and Keras\cite{keras} is the platform used to create the \gls{ml} model.
+  \item Pandas\cite{pandas}, Matplotlib\cite{matplotlib} and Scikit-learn\cite{sklearn} are the Python packages used to visualize and manipulate data inside Python.
+\end{itemize}
+\subsection{Used Hardware}
+Two different Hardwares have been used in this project.
+
+My personal computer have been used to create the dataset. Its specifications in \cref{tab:pc_spec}
+\begin{center}
+  \begin{table}[H]
+     \renewcommand{\arraystretch}{1.2}
+      \centerline{
+      \centering
+      \begin{tabular}{|c|c|}
+      \hline
+      CPU &AMD Ryzen 5 Mobile 3500U\\
+      \hline
+      GPU &AMD Radeon Vega 8\\
+      \hline
+      RAM&\SI{12}{\giga\byte}\\
+      \hline
+      OS&Windows\\
+      \hline
+      \end{tabular}}
+      \caption{Personal Computer specifications}
+      \label{tab:pc_spec}
+  \end{table}
+\end{center}
+
+Google Colab\cite{colab} remote server has been used to develop the \gls{ml} model.
+\include{sections/section1}
+\include{sections/section2}
+\include{sections/section3}
+
+
+
+\newpage
+\printglossary[type=\acronymtype]
+\medskip
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\begin{appendices}
+\include{extra/appendix}
+\end{appendices}
+\end{document}
