@@ -58,5 +58,7 @@ It is very limited, an may be "worthless" for real application: only one type of
 
 ## :star2: EASY-TO-RUN notebook in Kaggle
 [Notebook](https://www.kaggle.com/code/mrjacopong/spm-demagnetization-script)
+
 [Dataset](https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset)
+
 Enjoy it! 
