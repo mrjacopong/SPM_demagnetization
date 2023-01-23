@@ -56,4 +56,7 @@ The attached report better explains how the code works, the engineering backgrou
 *THIS CODE IS FOR EDUCATIONAL PURPOSES*
 It is very limited, an may be "worthless" for real application: only one type of motor is used, with limited amount motor specifications, and with fixed materials.
 
-:star2: Enjoy it! 
+## :star2: EASY-TO-RUN notebook in Kaggle
+[Notebook](https://www.kaggle.com/code/mrjacopong/spm-demagnetization-script)
+[Dataset](https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset)
+Enjoy it! 
